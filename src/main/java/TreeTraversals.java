@@ -29,20 +29,51 @@ public class TreeTraversals {
 
         TreeTraversals treeTraversals = new TreeTraversals();
 
-        treeTraversals.inorderTraversal(root);
+        System.out.println("inOrderTraversal");
+        treeTraversals.inOrderTraversal(root);
+        System.out.println("--------------");
+        System.out.println("preOrderTraversal");
+        treeTraversals.preOrderTraversal(root);
+        System.out.println("--------------");
+        System.out.println("postOrderTraversal");
+        treeTraversals.postOrderTraversal(root);
+        System.out.println("--------------");
 
     }
 
-    public void inorderTraversal(Node root){
+    public void inOrderTraversal(Node root){
 
         if(root==null){
                return;
         }
 
-        inorderTraversal(root.left);
+        inOrderTraversal(root.left);
         System.out.println(root.data);
-        inorderTraversal(root.right);
+        inOrderTraversal(root.right);
     }
+
+    public void preOrderTraversal(Node root){
+
+        if(root==null){
+            return;
+        }
+
+        System.out.println(root.data);
+        preOrderTraversal(root.left);
+        preOrderTraversal(root.right);
+    }
+
+    public void postOrderTraversal(Node root){
+
+        if(root==null){
+            return;
+        }
+
+        postOrderTraversal(root.left);
+        postOrderTraversal(root.right);
+        System.out.println(root.data);
+    }
+
 
 }
 
